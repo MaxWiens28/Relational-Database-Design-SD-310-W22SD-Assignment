@@ -1,0 +1,22 @@
+﻿@using Relational_Database_Design_SD_310_W22SD_Assignment.Models.ViewModels;
+@model UserSelectViewModel;
+
+<form asp-action="UserPurchasingList">
+    <select asp-items="@Model.UserSelectItems" name="id"></select>
+    <button type="submit">Select</button>
+</form>
+
+@if(Model.SelectedUser != null){
+    <h1>@Model.SelectedUser.Name</h1>
+
+    <ul>
+        @foreach(Song s in Model.UserSongs)
+        {
+            <li>
+                @s.SongName
+                @s.Price
+            </li>
+            <Button type="submit">Buy</Button>
+        }
+    </ul>
+}  

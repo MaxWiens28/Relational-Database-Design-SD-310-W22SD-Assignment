@@ -1,0 +1,10 @@
+﻿@model List<Song>
+
+<h1>Top Three Rated Songs</h1>
+
+<ul>
+    @foreach(Song s in Model)
+    {
+        <li>@s.SongName</li>
+    }
+</ul>

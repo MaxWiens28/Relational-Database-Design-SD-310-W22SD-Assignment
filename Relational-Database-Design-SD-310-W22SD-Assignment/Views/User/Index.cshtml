@@ -1,0 +1,13 @@
+﻿@using Relational_Database_Design_SD_310_W22SD_Assignment.Models.ViewModels;
+@model UserSelectViewModel
+
+<h1>Select a User</h1>
+
+<p>
+    <a asp-action="Create">Add new Song</a>
+</p>
+
+<form asp-action="UserDetails">
+    <select name="UserID" asp-items="Model.UserSelectItems"></select>
+    <button type="submit">Submit</button>
+</form>

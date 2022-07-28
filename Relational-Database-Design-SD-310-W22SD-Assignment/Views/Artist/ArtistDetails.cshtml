@@ -1,0 +1,20 @@
+﻿@using Relational_Database_Design_SD_310_W22SD_Assignment.Models.ViewModels;
+@model ArtistSelectViewModel;
+
+<form asp-action="ArtistDetails">
+    <select asp-items="@Model.ArtistSelectItems" name="id"></select>
+    <button type="submit">Select</button>
+</form>
+
+@if(Model.SelectedArtist != null){
+    <h1>@Model.SelectedArtist.ArtistsName</h1>
+
+    <ul>
+        @foreach(Song s in Model.ArtistsSongs)
+        {
+            <li>
+                @s.SongName
+            </li>
+        }
+    </ul>
+}
